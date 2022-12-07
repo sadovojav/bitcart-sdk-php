@@ -12,4 +12,5 @@ class User
     public readonly Settings $settings;
     public readonly string $created;
     public readonly ?string $password;
+    public readonly ?string $token;
 }
