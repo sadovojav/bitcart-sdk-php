@@ -44,6 +44,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
@@ -96,6 +97,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
@@ -121,6 +123,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
@@ -149,6 +152,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
@@ -177,6 +181,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
@@ -197,6 +202,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\User\User::class,
