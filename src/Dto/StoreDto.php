@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace Bitcart\Dto;
 
-use Bitcart\Enums\Coin;
+use Bitcart\Enums\Currency;
 
 class StoreDto extends AbstractDto
 {
     /**
      * @param  string  $name
      * @param  array  $wallets
-     * @param  Coin  $defaultCurrency
+     * @param  Currency  $defaultCurrency
      * @param  CheckoutSettingsDto  $checkoutSettings
      */
     public function __construct(
         public string $name,
         public array $wallets,
-        public Coin $defaultCurrency = Coin::BTC,
+        public Currency $defaultCurrency = Currency::USD,
         public CheckoutSettingsDto $checkoutSettings = new CheckoutSettingsDto(),
     ) {
     }
