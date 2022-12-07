@@ -37,6 +37,105 @@ try {
 }
 ```
 
+## Checklist
+<details>
+  <summary>Open</summary><br/>
+
+### USERS
+- [x] GET /users/stats
+- [x] GET /users/me
+- [x] POST /users/me/settings
+- [x] GET /users/count
+- [x] GET /users/{model_id}
+- [x] DELETE /users/{model_id}
+- [x] PATCH /users/{model_id}
+- [x] GET /users
+- [x] POST /users
+- [ ] POST /users/batch
+
+### WALLETS
+- [ ] GET /wallets/history/all
+- [x] GET /wallets/history/{model_id}
+- [x] GET /wallets/balance
+- [x] GET /wallets/{model_id}/balance
+- [ ] GET /wallets/{model_id}/checkin
+- [ ] GET /wallets/{model_id}/channels
+- [ ] POST /wallets/{model_id}/channels/open
+- [ ] POST /wallets/{model_id}/channels/close
+- [ ] POST /wallets/{model_id}/inpay
+- [x] GET /wallets/count
+- [x] GET /wallets/{model_id}
+- [x] DELETE /wallets/{model_id}
+- [x] PATCH /wallets/{model_id}
+- [x] GET /wallets
+- [x] POST /wallets
+POST /wallets/batch
+
+#### STORES
+- [x] GET /stores/{model_id}/ping
+- [x] PATCH /stores/{model_id}/checkout_settings
+- [x] PATCH /stores/{model_id}/theme_settings
+- [x] PATCH /stores/{model_id}/plugin_settings
+- [x] GET /stores/count
+- [x] GET /stores/{model_id}
+- [x] DELETE /stores/{model_id}
+- [x] PATCH /stores/{model_id}
+- [x] GET /stores
+- [x] POST /stores
+- [ ] POST /stores/batch
+- [ ] GET /stores/{store_id}/integrations/shopify/{order_id}
+
+#### INVOICES
+- [ ] GET /invoices/order_id/{order_id}
+- [ ] GET /invoices/export
+- [ ] PATCH /invoices/{model_id}/customer
+- [x] GET /invoices/count
+- [x] GET /invoices/{model_id}
+- [x] DELETE /invoices/{model_id}
+- [x] PATCH /invoices/{model_id}
+- [x] GET /invoices
+- [x] POST /invoices
+- [ ] POST /invoices/batch
+
+#### PRODUCTS
+- [x] GET /products/maxprice
+- [x] GET /products/categories
+- [x] GET /products/count
+- [x] GET /products/{model_id}
+- [x] DELETE /products/{model_id}
+- [x] PATCH /products/{model_id}
+- [x] GET /products
+- [x] POST /products
+- [ ] POST /products/batch
+
+#### PAYOUTS
+- [x] GET /payouts/count
+- [x] GET /payouts/{model_id}
+- [x] DELETE /payouts/{model_id}
+- [ ] PATCH /payouts/{model_id}
+- [x] GET /payouts
+- [x] POST /payouts
+- [ ] POST /payouts/batch
+
+#### TOKEN
+- [x] GET /token
+- [x] POST /token
+- [x] GET /token/current
+- [x] GET /token/count
+- [x] DELETE /token/{model_id}
+- [x] PATCH /token/{model_id}
+
+### CRYPTOS
+- [x] GET /cryptos
+- [x] GET /cryptos/supported
+- [x] GET /cryptos/rate
+- [x] GET /cryptos/fiatlist
+- [ ] GET /cryptos/tokens/{currency}
+- [ ] GET /cryptos/tokens/{currency}/abi
+- [ ] GET /cryptos/explorer/{currency}
+- [ ] GET /cryptos/rpc/{currency}
+</details>
+
 ## Best practices
 - Always use an API key with as little permissions as possible.
 
