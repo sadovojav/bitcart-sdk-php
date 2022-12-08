@@ -31,6 +31,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\Wallet\Wallet::class,
@@ -50,6 +51,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\Wallet\Wallet::class,
@@ -83,6 +85,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     WalletSearch::class,
@@ -116,6 +119,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     WalletBalance::class,
@@ -141,6 +145,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\Wallet\Wallet::class,
@@ -162,6 +167,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\Wallet\Wallet::class,
@@ -199,6 +205,7 @@ class Wallet extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     'array<' . \Bitcart\Result\Wallet\History::class . '>',

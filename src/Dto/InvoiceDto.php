@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Bitcart\Dto;
 
+use Bitcart\Enums\Currency;
+
 class InvoiceDto extends AbstractDto
 {
     /**
      * @param  int|float  $price
      * @param  string  $storeId
-     * @param  string  $currency
+     * @param  Currency|null  $currency
      * @param  string  $paidCurrency
      * @param  string  $orderId
      * @param  string  $notificationUrl
@@ -24,7 +26,7 @@ class InvoiceDto extends AbstractDto
     public function __construct(
         public int|float $price,
         public string $storeId,
-        public string $currency = '',
+        public ?Currency $currency,
         public string $paidCurrency = '',
         public string $orderId = '',
         public string $notificationUrl = '',

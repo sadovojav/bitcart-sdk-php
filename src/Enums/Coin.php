@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Bitcart\Enums;
 
+use Bitcart\Traits\EnumToArray;
+
 enum Coin: string
 {
+    use EnumToArray;
+
     case BTC = 'btc';
     case BTH = 'bth';
     case ETH = 'eth';

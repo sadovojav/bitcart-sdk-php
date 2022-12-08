@@ -25,6 +25,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     Stats::class,
@@ -64,6 +65,7 @@ class User extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     UserSearch::class,

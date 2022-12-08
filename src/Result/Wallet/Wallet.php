@@ -14,6 +14,7 @@ final class Wallet
     public readonly string $label;
     public readonly string $hint;
     public readonly string $contract;
+    public readonly ?array $additional_xpub_data;
     public readonly string $user_id;
     public readonly bool $error;
     public readonly string $balance;

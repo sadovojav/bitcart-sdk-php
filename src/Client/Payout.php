@@ -107,6 +107,7 @@ class Payout extends AbstractClient
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())
+                ->flexible()
                 ->mapper()
                 ->map(
                     \Bitcart\Result\Payout\Payout::class,

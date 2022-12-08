@@ -19,7 +19,7 @@ $walletEthXpub = '03e98216653d7ca27ddfeb982069dbbdee8e57b70f08df2b2ba82cf1a9eaaf
 //$wallet = $walletClient->createWallet((new \Bitcart\DTO\WalletDto(
 //    name: 'Wallet ETH',
 //    xpub: $walletEthXpub,
-//    currency: 'eth'
+//    currency: \Bitcart\Enums\Coin::ETH,
 //)));
 //var_dump($wallet);
 

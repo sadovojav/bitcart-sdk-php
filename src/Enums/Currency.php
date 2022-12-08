@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Bitcart\Enums;
 
+use Bitcart\Traits\EnumToArray;
+
 enum Currency: string
 {
+    use EnumToArray;
+
     case ARS = 'ARS';
     case AUD = 'AUD';
     case BHD = 'BHD';

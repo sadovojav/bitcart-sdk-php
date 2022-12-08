@@ -4,25 +4,28 @@ declare(strict_types=1);
 
 namespace Bitcart\Dto;
 
+use Bitcart\Enums\Coin;
+use Bitcart\Enums\ContractInterface;
+
 class WalletDto extends AbstractDto
 {
     /**
      * @param  string  $name
      * @param  string  $xpub
-     * @param  string  $currency
-     * @param  bool  $lightningEnabled
+     * @param  Coin  $currency
+     * @param  ContractInterface|null  $contract
      * @param  string  $label
      * @param  string  $hint
-     * @param  string  $contract
+     * @param  bool  $lightningEnabled
      */
     public function __construct(
         public string $name,
-        public string $xpub = '',
-        public string $currency = 'btc',
-        public bool $lightningEnabled = false,
+        public string $xpub,
+        public Coin $currency,
+        public ?ContractInterface $contract = null,
         public string $label = '',
         public string $hint = '',
-        public string $contract = ''
+        public bool $lightningEnabled = false,
     ) {
     }
 
@@ -32,10 +35,10 @@ class WalletDto extends AbstractDto
             $data['name'],
             $data['xpub'],
             $data['currency'],
-            $data['lightningEnabled'],
+            $data['contract'],
             $data['label'],
             $data['hint'],
-            $data['contract'],
+            $data['lightningEnabled'],
         );
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bitcart\Dto;
 
+
 class AbstractDto
 {
     public function toArray(bool $decamelize = true): array
@@ -14,7 +15,11 @@ class AbstractDto
             $data = [];
 
             foreach ($arr as $key => $value) {
-                $data[$this->decamelize($key)] = $value;
+                if ($value instanceof \UnitEnum) {
+                    $data[$this->decamelize($key)] = $value->value;
+                } else {
+                    $data[$this->decamelize($key)] = $value;
+                }
             }
 
             return $data;

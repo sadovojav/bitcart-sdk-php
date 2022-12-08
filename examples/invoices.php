@@ -26,8 +26,8 @@ $invoiceClient = (new \Bitcart\Client\Invoice($baseUrl, $token));
 //$invoiceDto = new \Bitcart\Dto\InvoiceDto(
 //    price: 5,
 //    storeId: $storeId,
-//    currency: \Bitcart\Enums\Currency::USD->value,
-//    notificationUrl: 'https://9305-46-98-145-33.ngrok.io'
+//    currency: \Bitcart\Enums\Currency::USD,
+//    notificationUrl: 'https://0113-194-150-105-251.ngrok.io'
 //);
 //$invoice = $invoiceClient->createInvoice($invoiceDto);
 //var_dump($invoice);
@@ -35,7 +35,7 @@ $invoiceClient = (new \Bitcart\Client\Invoice($baseUrl, $token));
 //$invoiceDto = new \Bitcart\Dto\InvoiceDto(
 //    price: '10',
 //    storeId: $storeId,
-//    currency: \Bitcart\Enums\Currency::USD->value
+//    currency: \Bitcart\Enums\Currency::USD
 //);
 //$invoice = $invoiceClient->updateInvoice($invoiceId, $invoiceDto);
 //var_dump($invoice);
