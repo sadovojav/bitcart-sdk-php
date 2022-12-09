@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Bitcart\Dto;
+namespace Bitcart\Dto\Store;
+
+use Bitcart\Dto\AbstractDto;
+use Bitcart\Dto\ShopifyDto;
 
 class PluginSettingsDto extends AbstractDto
 {

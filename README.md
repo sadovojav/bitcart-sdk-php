@@ -112,10 +112,10 @@ POST /wallets/batch
 - [x] GET /payouts/count
 - [x] GET /payouts/{model_id}
 - [x] DELETE /payouts/{model_id}
-- [ ] PATCH /payouts/{model_id}
+- [x] PATCH /payouts/{model_id}
 - [x] GET /payouts
 - [x] POST /payouts
-- [ ] POST /payouts/batch
+- [x] POST /payouts/batch
 
 #### TOKEN
 - [x] GET /token

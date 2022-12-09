@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Bitcart\Client;
 
-use Bitcart\Dto\CheckoutSettingsDto;
-use Bitcart\Dto\PluginSettingsDto;
 use Bitcart\Dto\SearchDto;
-use Bitcart\Dto\StoreDto;
-use Bitcart\Dto\ThemeSettingsDto;
+use Bitcart\Dto\Store\CheckoutSettingsDto;
+use Bitcart\Dto\Store\PluginSettingsDto;
+use Bitcart\Dto\Store\StoreUpdateDto;
+use Bitcart\Dto\Store\ThemeSettingsDto;
+use Bitcart\Dto\Store\StoreCreateDto;
 use CuyZ\Valinor\Mapper\Source\JsonSource;
 use CuyZ\Valinor\MapperBuilder;
 
@@ -19,7 +20,7 @@ class Store extends AbstractClient
     /**
      * @throws \JsonException
      */
-    public function createStore(StoreDto $store): \Bitcart\Result\Store\Store
+    public function createStore(StoreCreateDto $store): \Bitcart\Result\Store\Store
     {
         $url = $this->getEndpoint();
         $headers = $this->getRequestHeaders();
@@ -56,6 +57,32 @@ class Store extends AbstractClient
         $headers = $this->getRequestHeaders();
         $method = 'GET';
         $response = $this->getHttpClient()->request($method, $url, $headers);
+
+        if ($response->getStatus() === 200) {
+            return (new MapperBuilder())
+                ->flexible()
+                ->mapper()
+                ->map(
+                    \Bitcart\Result\Store\Store::class,
+                    new JsonSource($response->getBody())
+                );
+        }
+
+        throw $this->getExceptionByStatusCode($method, $url, $response);
+    }
+
+    public function updateStore(string $storeId, StoreUpdateDto $store): \Bitcart\Result\Store\Store
+    {
+        $url = $this->getEndpoint() . '/' . $storeId;
+        $headers = $this->getRequestHeaders();
+        $method = 'PATCH';
+
+        $body = json_encode(
+            $store->toArray(),
+            JSON_THROW_ON_ERROR
+        );
+
+        $response = $this->getHttpClient()->request($method, $url, $headers, $body);
 
         if ($response->getStatus() === 200) {
             return (new MapperBuilder())

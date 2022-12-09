@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Bitcart\Dto;
+namespace Bitcart\Dto\Store;
+
+use Bitcart\Dto\AbstractDto;
 
 class CheckoutSettingsDto extends AbstractDto
 {

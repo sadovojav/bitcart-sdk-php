@@ -14,7 +14,7 @@ $walletEthId = 'PGMfcIJljplxiweNlRTVnYMGdmDoukIZ';
 $storeClient = (new \Bitcart\Client\Store($baseUrl, $token));
 
 // POST /stores
-//$store = $storeClient->createStore((new \Bitcart\DTO\StoreDto('Store #1', [
+//$store = $storeClient->createStore((new \Bitcart\DTO\Store\StoreCreateDto('Store #1', [
 //    $walletBtcId,
 //    $walletTrxId,
 //    $walletEthId,
@@ -38,18 +38,29 @@ $storeClient = (new \Bitcart\Client\Store($baseUrl, $token));
 //var_dump($storePing);
 
 // PATCH /stores/{model_id}/checkout_settings
-//$store = $storeClient->updateCheckoutSettings($storeId, new \Bitcart\Dto\CheckoutSettingsDto(
+//$store = $storeClient->updateCheckoutSettings($storeId, new \Bitcart\Dto\Store\CheckoutSettingsDto(
 //    expiration: 1440,
 //    transactionSpeed: 2
 //));
 //var_dump($store);
 
 // PATCH /stores/{model_id}/theme_settings
-//$store = $storeClient->updateThemeSettings($storeId, new \Bitcart\Dto\ThemeSettingsDto('https://loder.com'));
+//$store = $storeClient->updateThemeSettings($storeId, new \Bitcart\Dto\Store\ThemeSettingsDto('https://loder.com'));
 //var_dump($store);
 
 // PATCH /stores/{model_id}/plugin_settings
-//$store = $storeClient->updatePluginSettings($storeId, new \Bitcart\Dto\PluginSettingsDto(
+//$store = $storeClient->updatePluginSettings($storeId, new \Bitcart\Dto\Store\PluginSettingsDto(
 //    new \Bitcart\Dto\ShopifyDto("TEST Shop name")
+//));
+//var_dump($store);
+
+// PATCH /stores/{model_id}
+//$store = $storeClient->updateStore($storeId, new \Bitcart\Dto\Store\StoreUpdateDto(
+//    name: 'Store #1',
+//    wallets: [
+//        'wcKWnhsPGrtDbHQJDshPVbVzNbRJgvCn',
+//        'yLMuKyNyGJmiANQELGYqqPMoVfJaQYTp'
+//    ],
+//    defaultCurrency: \Bitcart\Enums\Currency::USD
 //));
 //var_dump($store);

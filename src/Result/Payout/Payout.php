@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Bitcart\Result\Payout;
 
 class Payout

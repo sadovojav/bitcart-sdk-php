@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Bitcart\Dto;
+namespace Bitcart\Dto\Payout;
 
-class PayoutDto extends AbstractDto
+use Bitcart\Dto\AbstractDto;
+use Bitcart\Enums\Currency;
+
+class PayoutCreateDto extends AbstractDto
 {
     /**
      * @param  float  $amount
      * @param  string  $destination
      * @param  string  $storeId
      * @param  string  $walletId
-     * @param  string  $currency
+     * @param  Currency  $currency
      * @param  string  $notificationUrl
      * @param  int  $maxFee
      */
@@ -20,7 +23,7 @@ class PayoutDto extends AbstractDto
         public string $destination,
         public string $storeId,
         public string $walletId,
-        public string $currency = '',
+        public Currency $currency,
         public string $notificationUrl = '',
         public int $maxFee = 0,
     ) {
