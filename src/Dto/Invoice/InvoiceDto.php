@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Bitcart\Dto;
+namespace Bitcart\Dto\Invoice;
 
+use Bitcart\Dto\AbstractDto;
 use Bitcart\Enums\Currency;
 
 class InvoiceDto extends AbstractDto

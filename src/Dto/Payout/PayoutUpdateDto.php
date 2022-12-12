@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Bitcart\Dto\Payout;
 
 use Bitcart\Dto\AbstractDto;
+use Bitcart\Enums\Coin;
+use Bitcart\Enums\ContractInterface;
 use Bitcart\Enums\Currency;
 use Bitcart\Enums\PayoutStatus;
 
@@ -15,7 +17,7 @@ class PayoutUpdateDto extends AbstractDto
      * @param  string  $destination
      * @param  string  $storeId
      * @param  string  $walletId
-     * @param  Currency  $currency
+     * @param  Currency|Coin|ContractInterface  $currency
      * @param  PayoutStatus|null  $status
      * @param  string  $notificationUrl
      * @param  int  $maxFee
@@ -27,7 +29,7 @@ class PayoutUpdateDto extends AbstractDto
         public string $destination,
         public string $storeId,
         public string $walletId,
-        public Currency $currency,
+        public Currency|Coin|ContractInterface $currency,
         public ?PayoutStatus $status = null,
         public string $notificationUrl = '',
         public int $maxFee = 0,

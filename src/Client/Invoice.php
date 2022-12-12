@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Bitcart\Client;
 
+use Bitcart\Dto\Invoice\CustomerDto;
+use Bitcart\Dto\Invoice\DetailsDto;
+use Bitcart\Dto\Invoice\InvoiceDto;
 use Bitcart\Dto\SearchDto;
-use Bitcart\Dto\InvoiceDto;
 use Bitcart\Result\Invoice\InvoiceSearch;
 use CuyZ\Valinor\Mapper\Source\JsonSource;
 use CuyZ\Valinor\MapperBuilder;
@@ -138,6 +140,52 @@ class Invoice extends AbstractClient
                     \Bitcart\Result\Invoice\Invoice::class,
                     new JsonSource($response->getBody())
                 );
+        }
+
+        throw $this->getExceptionByStatusCode($method, $url, $response);
+    }
+
+    public function updateCustomer(string $invoiceId, CustomerDto $customer)
+    {
+        $url = $this->getEndpoint() . '/' . $invoiceId . '/customer';
+        $headers = $this->getRequestHeaders();
+        $method = 'PATCH';
+
+        $body = json_encode(
+            $customer->toArray(),
+            JSON_THROW_ON_ERROR
+        );
+
+        $response = $this->getHttpClient()->request($method, $url, $headers, $body);
+
+        if ($response->getStatus() === 200) {
+            return (new MapperBuilder())
+                ->flexible()
+                ->mapper()
+                ->map(
+                    \Bitcart\Result\Invoice\Invoice::class,
+                    new JsonSource($response->getBody())
+                );
+        }
+
+        throw $this->getExceptionByStatusCode($method, $url, $response);
+    }
+
+    public function updateDetails(string $invoiceId, DetailsDto $details): bool
+    {
+        $url = $this->getEndpoint() . '/' . $invoiceId . '/details';
+        $headers = $this->getRequestHeaders();
+        $method = 'PATCH';
+
+        $body = json_encode(
+            $details->toArray(),
+            JSON_THROW_ON_ERROR
+        );
+
+        $response = $this->getHttpClient()->request($method, $url, $headers, $body);
+
+        if ($response->getStatus() === 200) {
+            return filter_var($response->getBody(), FILTER_VALIDATE_BOOLEAN);
         }
 
         throw $this->getExceptionByStatusCode($method, $url, $response);

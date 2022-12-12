@@ -88,7 +88,8 @@ POST /wallets/batch
 #### INVOICES
 - [ ] GET /invoices/order_id/{order_id}
 - [ ] GET /invoices/export
-- [ ] PATCH /invoices/{model_id}/customer
+- [x] PATCH /invoices/{model_id}/customer
+- [x] PATCH /invoices/{model_id}/details
 - [x] GET /invoices/count
 - [x] GET /invoices/{model_id}
 - [x] DELETE /invoices/{model_id}

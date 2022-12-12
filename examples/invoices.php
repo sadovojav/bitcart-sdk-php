@@ -23,7 +23,7 @@ $invoiceClient = (new \Bitcart\Client\Invoice($baseUrl, $token));
 //var_dump($invoice);
 
 // POST /invoices
-//$invoiceDto = new \Bitcart\Dto\InvoiceDto(
+//$invoiceDto = new \Bitcart\Dto\Invoice\InvoiceDto(
 //    price: 5,
 //    storeId: $storeId,
 //    currency: \Bitcart\Enums\Currency::USD,
@@ -32,10 +32,23 @@ $invoiceClient = (new \Bitcart\Client\Invoice($baseUrl, $token));
 //$invoice = $invoiceClient->createInvoice($invoiceDto);
 //var_dump($invoice);
 
-//$invoiceDto = new \Bitcart\Dto\InvoiceDto(
+//$invoiceDto = new \Bitcart\Dto\Invoice\InvoiceDto(
 //    price: '10',
 //    storeId: $storeId,
 //    currency: \Bitcart\Enums\Currency::USD
 //);
 //$invoice = $invoiceClient->updateInvoice($invoiceId, $invoiceDto);
+//var_dump($invoice);
+
+// PATCH /invoices/{model_id}/details
+//$invoice = $invoiceClient->updateDetails('QjKMDzDAuISwHKUcFWUNSI', \Bitcart\Dto\Invoice\DetailsDto::fromArray([
+//    'id' => 'NyXUqTWqzYJdQutPlelZPxrXRQRWvqUZ',
+//    'address' => 'z7aT3Tg8RWj6QM1NsDTSwfwPgHXmAKVB7H'
+//]));
+//var_dump($invoice);
+
+// PATCH /invoices/{model_id}/customer
+//$invoice = $invoiceClient->updateCustomer('QjKMDzDAuISwHKUcFWUNSI', \Bitcart\Dto\Invoice\CustomerDto::fromArray([
+//    'notes' => 'Lorem ipsum',
+//]));
 //var_dump($invoice);
