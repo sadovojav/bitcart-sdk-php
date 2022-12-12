@@ -1,6 +1,10 @@
 # Bitcart API PHP client library
 This library makes it easier to integrate Bitcart in your PHP application.
 
+```diff
+- Package is under development. The main code can completely change
+```
+
 ## Approach
 This library takes an opinionated approach to API with the aim of making your developer life as easy and convenient as possible.
 For this reason, we have decided to structure arguments a bit differently, but still allow full and advanced use cases.
