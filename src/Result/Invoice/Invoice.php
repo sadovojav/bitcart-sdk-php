@@ -20,6 +20,7 @@ final class Invoice
     public readonly string $notes;
     public readonly ?string $discount;
     public readonly string $status;
+    public readonly array $tx_hashes;
 //    public readonly $products;
     public readonly string $id;
     public readonly string $user_id;
