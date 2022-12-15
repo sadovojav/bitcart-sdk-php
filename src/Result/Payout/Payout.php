@@ -18,6 +18,6 @@ class Payout
     public readonly string $id;
     public readonly string $user_id;
     public readonly ?string $tx_hash;
-    public readonly ?int $used_fee;
+    public readonly int|float|null $used_fee;
     public readonly string $wallet_currency;
 }
