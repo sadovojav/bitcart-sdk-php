@@ -29,6 +29,7 @@ class InvoiceDto extends AbstractDto
         public string $storeId,
         public ?Currency $currency,
         public string $paidCurrency = '',
+        public int $sentAmount = 0,
         public string $orderId = '',
         public string $notificationUrl = '',
         public string $redirectUrl = '',
@@ -37,7 +38,8 @@ class InvoiceDto extends AbstractDto
         public string $shippingAddress = '',
         public string $notes = '',
         public string $discount = '',
-        public string $status = ''
+        public string $status = '',
+        public array $metadata = []
     ) {
     }
 
@@ -48,6 +50,7 @@ class InvoiceDto extends AbstractDto
             $data['storeId'],
             $data['currency'],
             $data['paidCurrency'],
+            $data['sentAmount'],
             $data['orderId'],
             $data['notificationUrl'],
             $data['redirectUrl'],
@@ -57,6 +60,7 @@ class InvoiceDto extends AbstractDto
             $data['notes'],
             $data['discount'],
             $data['status'],
+            $data['metadata'],
         );
     }
 }
