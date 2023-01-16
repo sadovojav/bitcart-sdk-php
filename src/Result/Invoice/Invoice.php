@@ -11,7 +11,7 @@ final class Invoice
     public readonly string $price;
     public readonly ?string $store_id;
     public readonly string $currency;
-    public readonly string $sent_amount;
+    public readonly ?string $sent_amount;
     public readonly string $paid_currency;
     public readonly string $order_id;
     public readonly string $redirect_url;
