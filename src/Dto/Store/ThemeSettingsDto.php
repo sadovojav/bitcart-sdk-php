@@ -10,11 +10,11 @@ class ThemeSettingsDto extends AbstractDto
 {
     /**
      * @param  string  $storeThemeUrl
-     * @param  string  $adminThemeUrl
+     * @param  string  $checkoutThemeUrl
      */
     public function __construct(
         public string $storeThemeUrl = '',
-        public string $adminThemeUrl = '',
+        public string $checkoutThemeUrl = '',
     ) {
     }
 
@@ -22,7 +22,7 @@ class ThemeSettingsDto extends AbstractDto
     {
         return new static(
             $data['storeThemeUrl'],
-            $data['adminThemeUrl'],
+            $data['checkoutThemeUrl'],
         );
     }
 }
